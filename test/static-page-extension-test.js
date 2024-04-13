@@ -3,8 +3,8 @@
 
 const { expect } = require('./harness')
 const { name: packageName } = require('#package')
-const resolvedSearch = require.resolve('@springio/antora-extensions/static-pages/search')
-const resolvedSpringProjects = require.resolve('@springio/antora-extensions/static-pages/spring-projects')
+const resolvedSearch = require.resolve('@today-tech/antora-extensions/static-pages/search')
+const resolvedTODAYProjects = require.resolve('@today-tech/antora-extensions/static-pages/today-projects')
 describe('static-page-extension', () => {
   const ext = require(packageName + '/static-page-extension')
   const createGeneratorContext = () => ({
@@ -65,7 +65,7 @@ describe('static-page-extension', () => {
         {
           files: [
             {
-              contents: '= Search\n:page-article: search\n\nSearch in all Spring Docs',
+              contents: '= Search\n:page-article: search\n\nSearch in all Infra Docs\n',
               path: 'modules/ROOT/pages/search.adoc',
               src: {
                 abspath: resolvedSearch,
@@ -76,14 +76,14 @@ describe('static-page-extension', () => {
               },
             },
             {
-              contents: '= Spring Projects\n:page-article: spring-projects\n\nList all Spring Projects',
-              path: 'modules/ROOT/pages/spring-projects.adoc',
+              contents: '= TODAY Projects\n:page-article: today-projects\n\nList all TODAY Projects\n',
+              path: 'modules/ROOT/pages/today-projects.adoc',
               src: {
-                abspath: resolvedSpringProjects,
-                basename: 'spring-projects.adoc',
+                abspath: resolvedTODAYProjects,
+                basename: 'today-projects.adoc',
                 extname: '.adoc',
-                path: 'modules/ROOT/pages/spring-projects.adoc',
-                stem: 'spring-projects',
+                path: 'modules/ROOT/pages/today-projects.adoc',
+                stem: 'today-projects',
               },
             },
           ],

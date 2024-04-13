@@ -1,16 +1,16 @@
 {
-  "name": "@springio/antora-extensions",
-  "version": "1.8.2",
-  "description": "Antora extensions that support the Spring documentation.",
+  "name": "@today-tech/antora-extensions",
+  "version": "1.0.0",
+  "description": "Antora extensions that support the Infra documentation.",
   "license": "ASL-2.0",
-  "author": "OpenDevise Inc. (https://opendevise.com)",
+  "author": "Harry Yang (https://taketoday.cn)",
   "contributors": [
     "Dan Allen <dan@opendevise.com>",
     "Sarah White <sarah@opendevise.com>"
   ],
-  "repository": "github:spring-io/antora-extensions",
+  "repository": "github:today-tech/antora-extensions",
   "bugs": {
-    "url": "https://github.com/spring-io/antora-extensions/issues"
+    "url": "https://github.com/today-tech/antora-extensions/issues"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -39,7 +39,7 @@
     "./static-page-extension": "./lib/static-page-extension.js",
     "./cache-scandir": "./lib/cache-scandir/index.js",
     "./static-pages/search": "./lib/static/search.adoc",
-    "./static-pages/spring-projects": "./lib/static/spring-projects.adoc",
+    "./static-pages/today-projects": "./lib/static/today-projects.adoc",
     "./asciinema-extension": "./lib/asciinema-extension.js"
   },
   "imports": {

@@ -103,7 +103,7 @@ describe('asciinema-extension', () => {
 
     it('should fail with unknown option', () => {
       expect(() => ext.register.call(generatorContext, { config: { foo: 'bar' } })).to.throws(
-        'Unrecognized option specified for @springio/antora-extensions: foo'
+        'Unrecognized option specified for @today-tech/antora-extensions: foo'
       )
       expect(generatorContext.messages).to.eql([])
     })

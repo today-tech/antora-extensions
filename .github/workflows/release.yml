@@ -8,7 +8,7 @@ on:
         required: false
 jobs:
   perform:
-    if: github.event_name == 'workflow_dispatch' && github.repository_owner == 'spring-io'
+    if: github.event_name == 'workflow_dispatch' && github.repository_owner == 'today-tech'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout

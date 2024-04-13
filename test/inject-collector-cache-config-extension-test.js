@@ -6,7 +6,7 @@ const { name: packageName } = require('#package')
 const fs = require('fs')
 const os = require('os')
 const ospath = require('node:path')
-const resolvedCacheScanDirIndexJs = require.resolve('@springio/antora-extensions/cache-scandir')
+const resolvedCacheScanDirIndexJs = require.resolve('@today-tech/antora-extensions/cache-scandir')
 
 const FIXTURES_DIR = ospath.join(__dirname, 'fixtures')
 

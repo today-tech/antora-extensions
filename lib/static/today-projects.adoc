@@ -1,0 +1,4 @@
+= TODAY Projects
+:page-article: today-projects
+
+List all TODAY Projects
