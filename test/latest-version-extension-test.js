@@ -3,6 +3,7 @@
 
 const { expect, trapAsyncError } = require('./harness')
 const { name: packageName } = require('#package')
+const { TagSemVerRx } = require('../lib/latest-version-extension')
 
 describe('latest-version-extension', () => {
   const ext = require(packageName + '/latest-version-extension')
@@ -188,7 +189,7 @@ describe('latest-version-extension', () => {
     it('handles invalid version format with proper message', async () => {
       contentAggregate = [createTag('6.0.0-M3-m-')]
       expect(await trapAsyncError(runContentAggregate)).to.throw(
-        'Cannot parse version = 6.0.0-M3-m- with regex /^v?(\\d+)\\.(\\d+)\\.(\\d+)(?:-(Draft|Beta|Alpha|RC|M)\\.?(\\d+))?(-(\\w+))?$/'
+        `Cannot parse version = 6.0.0-M3-m- with regex ${TagSemVerRx}`
       )
     })
   })
@@ -228,12 +229,17 @@ describe('latest-version-extension', () => {
     })
 
     it('4.0.0-Draft.7-SNAPSHOT is mapped properly', async () => {
-      contentCatalog = createContentCatalog([createVersion('4.0.0-Draft.7', true), createVersion('4.0.0-Draft.7', '-SNAPSHOT')])
+      contentCatalog = createContentCatalog([
+        createVersion('4.0.0-Draft.7', true),
+        createVersion('4.0.0-Draft.7', '-SNAPSHOT'),
+        createVersion('5.0-Draft.2', '-SNAPSHOT'),
+      ])
       const versions = await runComponentsRegistered()
       expect(versions).to.eql([
         [
           { version: '4.0.0-Draft.7', versionSegment: '4.0' },
           { version: '4.0.0-Draft.7', versionSegment: '4.0-SNAPSHOT' },
+          { version: '5.0-Draft.2', versionSegment: '5.0-SNAPSHOT' },
         ],
       ])
     })
