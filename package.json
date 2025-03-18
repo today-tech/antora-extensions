@@ -1,6 +1,6 @@
 {
   "name": "@today-tech/antora-extensions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Antora extensions that support the Infra documentation.",
   "license": "ASL-2.0",
   "author": "Harry Yang (https://taketoday.cn)",
